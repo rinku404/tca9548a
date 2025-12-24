@@ -1,10 +1,8 @@
-menu "TCA9548A Configuration"
+menu "TCA9548A I2C Multiplexer"
 
     config TCA9548A_I2C_TIMEOUT_MS
-        int "I2C Timeout (ms)"
+        int "I2C command timeout in milliseconds"
         default 1000
         help
-            Timeout in milliseconds for I2C transactions.
-            Set to -1 to wait forever (not recommended for production).
-
+            Timeout for I2C master command in milliseconds.
 endmenu
