@@ -1,0 +1,10 @@
+menu "TCA9548A Configuration"
+
+    config TCA9548A_I2C_TIMEOUT_MS
+        int "I2C Timeout (ms)"
+        default 1000
+        help
+            Timeout in milliseconds for I2C transactions.
+            Set to -1 to wait forever (not recommended for production).
+
+endmenu
