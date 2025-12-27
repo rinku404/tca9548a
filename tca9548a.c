@@ -41,6 +41,7 @@ esp_err_t tca9548a_new(i2c_master_bus_handle_t bus_handle, const tca9548a_config
 esp_err_t tca9548a_select_channel(tca9548a_handle_t tca_handle, tca9548a_channel_t channel)
 {
     ESP_RETURN_ON_FALSE(tca_handle, ESP_ERR_INVALID_ARG, TAG, "Invalid handle");
+    ESP_RETURN_ON_FALSE((channel <= TCA9548A_CHANNEL_7) || (channel == TCA9548A_CHANNEL_NONE), ESP_ERR_INVALID_ARG, TAG, "Invalid channel number");
 
     uint8_t data = 0;
     if (channel != TCA9548A_CHANNEL_NONE) {
